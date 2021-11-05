@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flexbox</title>
+
+    <!--Prática Align Self
+    <style>
+        .flex-container{
+            display: flex;
+            max-width: 350px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        .item{
+            background-color: brown;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            margin: 5px;
+        }
+        .align-container{
+            align-items: center;
+        }
+        .center{
+            align-self: center;
+        }
+        .start{
+            align-self: flex-start;
+        }
+        .end{
+            align-self: flex-end;
+        }
+        .baseline{
+            align-self: baseline;
+        }
+        .stretch{
+            align-self: stretch;
+        }
+        .auto{
+            align-self: auto;
+        }
+        .direction{
+            flex-direction: column;
+        }
+    </style>-->
+
+    <!--Prática Order
+    <style>
+        .flex-container{
+            display: flex;
+            max-width: 350px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .item{
+            flex: 1;
+            background-color: brown;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            margin: 5px;
+        }
+        .o1{
+            order: 1;
+        }
+        .o2{
+            order: 2;
+        }
+        .o3{
+            order: 3;
+        }
+        .o4{
+            order: 4;
+        }
+        .direction{
+            flex-direction: column;
+        }
+    </style>-->
+
+    <!--Prática Flex
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 400px;
+            margin: 5px;
+        }
+        .item{
+            background-color: brown;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+        .flex-1{
+            flex: 1;
+            /* grow = 1, shrink = 1, basis = 0 */
+        }
+        .flex-2{
+            flex: 2;
+            /* grow = 2, shrink = 1, basis = 0 */
+        }
+        .largura{
+            width: 200px;
+        }
+
+    </style>-->
+
+    <!--Prática Flex Shrink
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 350px;
+            margin-bottom: 10px;
+        }
+        .item{
+            background-color: orangered;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+        .s-1{
+            flex-shrink: 1;
+        }
+        .fg-1{
+            flex-grow: 1;
+        }
+        .s-0{
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+        .s-2{
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+        .s-3{
+            flex-shrink: 3;            
+        }
+
+    </style>-->
+
+    <!--Prática Flex Basis
+    <style>
+        .container{
+            max-width: 500px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .item{
+            background-color: coral;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+        .bauto{
+            flex-basis: auto;
+        }
+        .fg-0{
+            flex-basis: 0;
+        }
+        .fg-1{
+            flex-grow: 1;
+        }
+        .fg-2{
+            flex-grow: 2;
+        }
+        .b-0{
+            flex-basis: 0;
+        }
+        .w100{
+            flex-basis: 100px;
+        }
+
+    </style>-->
+
+    <!--Prática Flex Grow
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 300px;
+            margin-bottom: 20px;
+
+        }
+        .item{
+            background-color: orangered;
+            margin: 5px;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        .fg-0{
+            flex-grow: 0;
+        }
+        .fg-1{
+            flex-grow: 1;
+        }
+        .fg-2{
+            flex-grow: 2;
+        }
+        .fg-3{
+            flex-grow: 3;
+        }    
+
+    </style>-->
+
+    <!--Prática Align Content
+    <style>
+        .container{
+            height: 400px;
+            max-width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid black;
+        }
+        .item{
+            background-color: orangered;
+            padding: 0 5px;
+            margin: 5px;
+            flex: 1;
+            text-align: center;
+            color: white;
+        }
+        .stretch{
+            align-content: stretch;
+        }
+        .center{
+            align-content: center;
+        }
+        .flex-start{
+            align-content: flex-start;
+        }
+        .flex-end{
+            align-content: flex-end;
+        }
+        .space-around{
+            align-content: space-around;
+        }
+        .space-between{
+            align-content: space-between;
+        }
+
+    </style>-->
+
+    <!--Prática Align Items
+
+    <style>
+        .container{
+            max-width: 350px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .item{
+            background-color: blueviolet;
+            margin: 5px;
+            color:  white;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .center{
+            align-items: center;
+        }
+        .stretch{
+            align-items: stretch;
+        }
+        .start{
+            align-items: flex-start;
+        }
+        .end{
+            align-items: flex-end;
+        }
+        .baseline{
+            align-items: baseline;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .central{
+            height: 400px;
+            justify-content: center;            
+        }
+        .central .item{
+            flex: 0;
+            padding: 20px;
+        }
+
+    </style> -->
+
+    <!--Prática Justify-content
+
+        .container{
+            max-width: 400px;
+            border: 1px solid black;
+            margin: 0;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .item{
+            background-color: blueviolet;
+            margin: 5px;
+            text-align: center;
+            color: white;
+        }   
+        .flex-start{
+            justify-content: flex-start;
+        } 
+        .flex-end{
+            justify-content: flex-end;
+        }
+        .center{
+            justify-content: center;
+        }
+        .space-between{
+            justify-content: space-between;
+        }
+        .space-around{
+            justify-content: space-around;
+        }
+        .column{
+            flex-direction: column;
+            min-height: 200px;
+        }
+
+    </style>-->
+
+    <!--Prática Flex-flow
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 500px;
+            margin-bottom: 10px;          
+        }
+        .default{
+            flex-flow: row nowrap;
+        }
+        .wrap{
+            flex-flow: row wrap;
+        }
+        .wrap-reverse{
+            flex-flow: row wrap-reverse;
+        }
+        .r-nowrap{
+            flex-flow: row-reverse nowrap;
+        }
+        .r-wrap{
+            flex-flow: row-reverse wrap;
+        }
+        .rr-wrap{
+            flex-flow: row-reverse wrap-reverse;
+        }
+        .item{
+            background-color: blueviolet;
+            margin: 5px;
+            color: white;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>-->
+
+    <!--Prática Flex Wrap
+    <style>
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+            height: 100px;
+            border: 2px solid black;
+            max-width: 300px;
+        }
+        .item{
+            font-size: 24px;
+            height: 50%;
+            text-align: center;
+            min-width: 100px;
+            line-height: 50px;
+        }
+        .nowrap{
+            flex-wrap: nowrap;
+        }
+        .wrap{
+            flex-wrap: wrap;
+        }
+        .wrap-reverse{
+            flex-wrap: wrap-reverse;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: lightgreen;
+        }
+        .orange{
+            background-color: orangered;
+        }
+        
+
+    </style>-->
+
+    <!--Prática de Flex-Direction
+    <style>
+        .flex-container{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+        }
+        .flex-item{
+            background: blue;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+        .row{
+            flex-direction: row;
+        }
+        .row-reverse{
+            flex-direction: row-reverse;
+        }
+        .row-reverse li{
+            background-color: red;
+        }
+        .column{
+            float: left;
+            flex-direction: column;
+        }
+        .column li{
+            background-color: orange;
+        }
+        .column-reverse{
+            float: right;
+            flex-direction: column-reverse;
+        }
+        .column-reverse li{
+            background-color: purple;
+        }
+
+    </style>-->
+    
+    <!-- Prática Display: Flex
+    <style>
+        .flex{
+            max-width: 300px;
+            padding: 10px;
+            border: 2px solid black;
+            display: flex;            
+        }
+        .item{
+            background-color: aqua;
+            margin: 5px;
+        }
+    </style>-->
+</head>
+<body>
+    <!--Prática Align Self
+    <h1>Row</h1>
+    <section class="flex-container align-container">
+        <div class="item auto">AAA</div>
+        <div class="item auto">123</div>
+        <div class="item auto">Estabelece o alinhamento de modo individual sobre um determinado item.</div>
+        <div class="item auto">ITEM 4</div>
+    </section>
+    <section class="flex-container">
+        <div class="item center">AAA</div>
+        <div class="item start">123</div>
+        <div class="item stretch">Estabelece o alinhamento de modo individual sobre um determinado item.</div>
+        <div class="item end">ITEM 4</div>
+    </section>
+    <h1>Column</h1>
+    <section class="flex-container align-container direction">
+        <div class="item auto">AAA</div>
+        <div class="item auto">123</div>
+        <div class="item auto">Estabelece o alinhamento de modo individual sobre um determinado item.</div>
+        <div class="item auto">ITEM 4</div>
+    </section>
+    <section class="flex-container direction">
+        <div class="item center">AAA</div>
+        <div class="item start">123</div>
+        <div class="item stretch">Estabelece o alinhamento de modo individual sobre um determinado item.</div>
+        <div class="item end">ITEM 4</div>
+    </section>-->
+
+    <!--Prática Order
+    <h1>Row</h1>
+    <p>Order 0</p>
+    <div class="flex-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">4n</div>
+    </div>
+    <p>Order: Diferentes</p>
+    <div class="flex-container">
+        <div class="item o4">1</div>
+        <div class="item o3">2</div>
+        <div class="item o1">3</div>
+        <div class="item o4">4</div>
+        <div class="item o2">4n</div>
+    </div>
+    <h1>Column</h1>
+    <p>Order 0</p>
+    <div class="flex-container direction">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">4n</div>
+    </div>
+    <p>Order: Diferentes</p>
+    <div class="flex-container direction">
+        <div class="item o4">1</div>
+        <div class="item o3">2</div>
+        <div class="item o1">3</div>
+        <div class="item o4">4</div>
+        <div class="item o2">4n</div>
+    </div>-->
+
+    <!-- Prática Flex
+    <p>Flex: 1</p>
+    <div class="flex-container">
+        <div class="item flex-1">A</div>
+        <div class="item flex-1">BBB</div>
+        <div class="item flex-1">CC</div>
+        <div class="item flex-1">D</div>
+        <div class="item flex-1">EF</div>
+    </div>
+    <p>Flex: mix</p>
+    <div class="flex-container">
+        <div class="item flex-1">A</div>
+        <div class="item flex-2">BBB</div>
+        <div class="item flex-2">CC</div>
+        <div class="item flex-1">D</div>
+        <div class="item flex-1">EF</div>
+    </div>
+    <p>Width ignorado</p>
+    <div class="flex-container">
+        <div class="item flex-1">A</div>
+        <div class="item flex-1">BBB</div>
+        <div class="item flex-1">CC</div>
+        <div class="item flex-1">D</div>
+        <div class="item flex-1">EF</div>
+    </div>-->
+
+    <!--Prática Flex Shrink
+    <p>Shrink 1</p>
+    <div class="flex-container">
+        <div class="item s-1 fg-1">A</div>
+        <div class="item s-1 fg-1">B</div>
+        <div class="item s-1 fg-1">C</div>
+        <div class="item s-1 fg-1">D</div>
+        <div class="item s-1 fg-1">E</div>
+    </div>
+    <div class="flex-container">
+        <div class="item s-1 fg-1">A</div>
+        <div class="item s-1 fg-1">TEXTO</div>
+        <div class="item s-1 fg-1">C</div>
+        <div class="item s-1 fg-1">D</div>
+        <div class="item s-1 fg-1">E</div>
+    </div>
+    <p>Shrink 0</p>
+    <div class="flex-container">
+        <div class="item s-0 fg-1">A</div>
+        <div class="item s-0 fg-1">B TEXTO</div>
+        <div class="item s-0 fg-1">C</div>
+        <div class="item s-0 fg-1">D TEXTO</div>
+        <div class="item s-0 fg-1">E</div>
+    </div>
+    <p>Shrink mix</p>
+    <div class="flex-container">
+        <div class="item s-1 fg-1">A</div>
+        <div class="item s-3 fg-1">B TEXTO</div>
+        <div class="item s-2 fg-1">C</div>
+        <div class="item s-3 fg-1">D TEXTO</div>
+    </div>-->  
+
+    <!--Prática Flex Basis
+    <p>Auto</p>
+    <div class="container">
+        <div class="item bauto fg-1">A</div>
+        <div class="item bauto fg-1">BBB</div>
+        <div class="item bauto fg-1">C</div>
+        <div class="item bauto fg-2">DEF</div>
+    </div>
+    <p>0 zero</p>
+    <div class="container">
+        <div class="item b-0 fg-1">A</div>
+        <div class="item b-0 fg-1">BBB</div>
+        <div class="item b-0 fg-1">C</div>
+        <div class="item b-0 fg-1">DEF</div>
+    </div>
+    <p>basis + width</p>
+    <div class="container">
+        <div class="item w100 fg-1">A</div>
+        <div class="item w100 fg-1">BBB</div>
+        <div class="item w100 fg-1">C</div>
+        <div class="item w100 fg-1">DEF</div>
+    </div>-->
+
+    <!--Prática Flex Grow
+    <p>Flex grow</p>
+    <div class="flex-container">
+        <div class="item fg-0">A</div>
+        <div class="item fg-0">B</div>
+        <div class="item fg-0">C</div>
+        <div class="item fg-0">D</div>
+    </div>
+    <p>Flex grow: alternados</p>
+    <div class="flex-container">
+        <div class="item fg-1">A</div>
+        <div class="item fg-2">B</div>
+        <div class="item fg-2">C</div>
+        <div class="item fg-1">D</div>
+    </div>
+    <p>Flex grow: variados</p>
+    <div class="flex-container">
+        <div class="item fg-0">A</div>
+        <div class="item fg-1">B</div>
+        <div class="item fg-2">C</div>
+        <div class="item fg-3">D</div>
+    </div>-->
+
+    <!-- Prática Align content
+    <p>Stretch</p>
+    <div class="container stretch">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus. </div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+    </div>
+
+    <p>Center</p>
+    <div class="container center">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus. </div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+    </div>
+
+    <p>Flex-Start</p>
+    <div class="container flex-start">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus. </div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+    </div>
+
+    <p>Flex-End</p>
+    <div class="container flex-end">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus. </div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+    </div>
+
+    <p>Space Around</p>
+    <div class="container space-around">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus. </div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+    </div>
+
+    <p>Space Between</p>
+    <div class="container space-between">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus. </div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+        <div class="item">Quisque facilisis lacus risus.</div>
+    </div>-->
+
+    <!-- Prática Align Items
+    <h1>Row</h1>
+    <p>Center</p>
+    <section class="container center">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>Stretch</p>
+    <section class="container stretch">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>Start</p>
+    <section class="container start">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>End</p>
+    <section class="container end">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>Baseline</p>
+    <section class="container baseline">
+        <div class="item"><br>Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+
+    <h1>Column</h1>
+    <p>Start</p>
+    <section class="container start column">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>End</p>
+    <section class="container end column">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>Center</p>
+    <section class="container center column">
+        <div class="item">Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>Baseline</p>
+    <section class="container baseline column">
+        <div class="item"><br>Item 1</div>
+        <div class="item">Texto utilizado como item 2</div>
+        <div class="item">Item 3 mais texto para testar as diferenças</div>
+    </section>
+    <p>Central</p>
+    <section class="container central center">
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis lacus risus, nec blandit odio gravida sed.</div>
+    </section>-->
+
+    <!--Prática Justify-content
+    <h1>Row</h1>
+    <p>Flex Start</p>
+    <section class="container flex-start">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+    </section>
+    <p>Flex End</p>
+    <section class="container flex-end">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+    </section>
+    <p>Center</p>
+    <section class="container center">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+    <p>Space Between</p>
+    <section class="container space-between">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+    <p>Space Around</p>
+    <section class="container space-around">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+
+
+    <h1>Column</h1>
+    <p>Flex Start</p>
+    <section class="container flex-start column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+    <p>Flex End</p>
+    <section class="container flex-end column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+    <p>Center</p>
+    <section class="container center column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+    <p>Space Between</p>
+    <section class="container space-between column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>
+    <p>Space Around</p>
+    <section class="container space-around column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item</div>
+        <div class="item">4</div>
+        <div class="item">Cinco</div>
+    </section>-->
+
+    <!--Prática Flex-flow 
+    <h1>Default: row nowrap</h1>
+    <div class="flex-container default">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+    <h1>Wrap</h1>
+    <div class="flex-container wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    <h1>Wrap reverse</h1>
+    <div class="flex-container wrap-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    <h1>Row-reverse nowrap</h1>
+    <div class="flex-container r-nowrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+    <h1>Row-reverse wrap</h1>
+    <div class="flex-container r-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    <h1>Row-reverse Wrap-reverse</h1>
+    <div class="flex-container rr-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>-->
+    
+    <!--Prática Flex Wrap
+    <h1>No Wrap</h1>
+    <div class="flex-container nowrap">
+        <div class="item orange">1</div>
+        <div class="item green">2</div>
+        <div class="item blue">3</div>
+        <div class="item orange">4</div>
+
+    </div>
+    <h1>Wrap</h1>
+    <div class="flex-container wrap">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item orange">3</div>  
+        <div class="item green">4</div>  
+
+    </div>
+    <h1>Wrap Reverse</h1>
+    <div class="flex-container wrap-reverse">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item orange">3</div>  
+        <div class="item blue">4</div>
+    </div>-->
+
+    <!--Prática de Flex-Direction
+    <ul class="flex-container row">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+    <ul class="flex-container row-reverse">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+    <ul class="flex-container column">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+    <ul class="flex-container column-reverse">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>-->
+
+    <!--Prática Display: Flex
+    <div class="flex">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>-->
+    
+</body>
+</html>
