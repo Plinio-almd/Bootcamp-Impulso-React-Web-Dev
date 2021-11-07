@@ -2,7 +2,11 @@
 Repositório para salvar os materiais produzidos durante o bootcamp
 
 ### Anotações
+  - Estrutura de dados
+  - Posicionamento com Flexbox
 
 ### Projetos
+  
 
-### Utilidades
+### Práticas
+  - Prática de flexbox com material do curso da DIO
