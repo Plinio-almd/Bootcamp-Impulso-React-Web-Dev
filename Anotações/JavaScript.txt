@@ -1,0 +1,187 @@
+MAp
+
+Estrutura:
+const myMap = new Map()
+
+Característica:
+-Uma coleção de arrays no formatto [chave,valor];
+-Pode ser iterado por um loop for...of
+
+Métodos:
+Adicionar, ler e deletar
+
+Map vs Objeto
+-Podem ter chaves de qualquer tipo;
+-Possuem a propriedade length;
+-São mais fáceis de iterar;
+-Utilizado quando o valor das chaves é desconhecido;
+- Os valores tem o mesmo tipo.
+
+Coleção Chaveada (SET)
+
+-Sets são estruturas que armazenam apenas valores únicos.
+
+const myArray = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8, 2, 1];
+const mySet = new Set(myArray);
+
+Métodos:
+Adicionar, consultar e deletar.
+mySet.add();
+mySet.has();
+mySet.delete();
+
+Set vs Array
+
+-Possui valores únicos;
+-Em vez da propriedade length, consulta-se o número de resgistro pela propriedade size;
+-Não possui os métodos map, filter, reduce, etc.
+
+	
+	# Manipulando o DOM #
+
+	O QUE É D.O.M.
+
+[Document Object Model]
+O DOM HTML é um padrão de como acessar e modificar os elementos HTML de uma página.
+
+	DOM vs BOM (Browser Object Model)
+Tudo o que está dentro do objeto window.
+
+	Selecinando elementos:
+Estrutura HTML: tag, classe, id.
+
+MÉTODOS:
+Selecionando os elementos de uma página:
+
+-getElementById('titulo');
+-getElementByTagName('li');
+-getElementByClassName('textos');
+-querySelectorAll('.primeir-classe .segunda-classe');
+-	||	('li .classe');
+
+Adicionar e deletar:
+document.creatElement(element) | Cria um novo elemento HTML
+document.removeChild(element) | Remove um elemento
+document.appendChild(element) | Adiciona um elemento
+document.replaceChild(element) | Substitui um elemento
+
+	# Trabalhando com estilos #
+Classes:
+meuElemento.classList.add("novo-estilo"); | Adiciona
+meuElemento.classList.remove("classe"); | Remove
+meuElemento.classList.toggle("dark-mode"); | Add ou Remove
+
+	CSS
+Acessando diretamento o CSS de um elemento:
+document.getElementsByTagName("p").style.colo = "blue";
+
+	# Eventos #
+Mouse:
+-mouseover, mouseout
+-click, dbclick
+
+Atualização:
+-Change, load
+
+	Acionando eventos:
+Event listener
+-Diretamente no JavaScript, cria um evento que vai ser acionado no momento em que o usuário realizar determinada ação.
+EX:
+const botao = document.getElementById("meuBotao");
+botao.addEventListener("click", outraFunção);
+
+No HTML:
+Especifica a função a ser chamada diretamente no elemento HTML.
+
+
+	TRABALHANDO COM MODULOS EM JAVASCRIPT
+
+O que são:
+- Arquivos JavaScript que tem a capacidade de exportar e importar informações de outros arquivos do mesmo tipo.
+
+	VANTAGENS
+- Organização do código;
+- Compartilhamento de variáveis em escopos diferentes;
+- Explicita as dependências dos arquivos.
+
+	Exportar
+Tipos:
+1/
+export function mostrarIdade(pessoa) {
+	return `A idade da ${pessoa.nome} é ${pessoa.idade}`
+};
+
+2/
+function mostrarIdade() 
+function mostrarCidade() 
+function mostrarHobby()
+
+export {
+mostrarIdade
+mostrarCidade
+mostrarHobby
+}
+
+3/ Default exports
+- Só pode haver um por arquivo;
+- Será o retorno padrão do seu arquivo.
+
+export default mostrarHobby
+
+
+	Importar
+- Named exports:
+import {funcao, variavel, classe} from './arquivo.js'
+
+- Default exports:
+import valorDefault from'.arquivo.js'
+
+Trocar nome de imports:
+import {arquivo as Apelido } from './arquivo.js'
+Apelido.metodo();
+
+- Importando todos os dados de um arquivo:
+import * as INFOS from './arquivo.js';
+INFOS.metodoA();
+console.log(INFOS.variavel);
+
+Vincular ao HTML:
+
+<script type="module" src="./main.js"></script>
+
+Para fazer testes localmente (de um arquivo no seu computador), será necessário estar rodando um servidor. Isso pode ser feito utilizando a extensão "LiveServer", do VScode.
+
+	Curiosidades
+- Módulos sempre estão em "Strict mode";
+- Podem ser utlizadas as extensões .js e .mjs;
+- Para testes locais, é necessário utilizar um servidor;
+- Ao importar, sempre lembre da extensão (.js, .mjs);
+- Ao importar, sempre utilize "./" como ponto de partida
+
+
+	DEBUGGING E ERROR HANDLING
+
+
+1- Tipos de erros
+
+	 ECMAScript Error
+Erros que ocorrem em tempo de execução.
+Composto por: 
+-Mensagem
+-Nome
+-Linha
+-Call stack
+
+	DOMExcepection
+Erros relacionados ao DOM. Referente a estrutura de elementos da árvore da página.
+
+2- Tratando os erros
+
+- Throw
+Diferente de return, ele trata a declaração como um erro, e a exibição é feita como um erro.
+
+-Try ... Catch ... Finally
+o try verifica dentro de uma função, e o catch aponta se houver algum erro. O finally executa, independente do resultado da verificação, é opcional sua utilização.
+
+3- o objeto Error
+Pode receber (message, fileName, lineNumber). Pode ter seu nome alterado com a propriedade .name.
