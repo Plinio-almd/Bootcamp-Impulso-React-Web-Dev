@@ -5,8 +5,6 @@ Repositório para salvar os materiais produzidos durante o bootcamp
   - Estrutura de dados
   - Posicionamento com Flexbox
 
-### Projetos
-  
-
 ### Práticas
   - Prática de flexbox com material do curso da DIO
+  - Projeto Jogo do Dinossauro sem Internet
